@@ -26,7 +26,7 @@ module AutoSessionTimeout
 
   def render_session_status
     response.headers["Etag"] = ""  # clear etags to prevent caching
-    render text: !!auto_session_timeout_user, status: 200
+    render plain: !!auto_session_timeout_user, status: 200
   end
 
   def render_session_timeout
